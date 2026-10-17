@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Tenfold Ads — your first three clicks</title>
+<meta name="description" content="Your church is in. Here is exactly what happens next: three clicks and one call, and we handle everything else on the way to your $10,000 monthly Google Ad Grant.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%2313253F'/%3E%3Cpath d='M5 19V10a7 7 0 0 1 14 0v9' fill='none' stroke='%23BE9A45' stroke-width='2'/%3E%3Cpath d='M12 3v16M5 13h14' stroke='%23BE9A45' stroke-width='1.4' opacity='.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Karla:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #13253F;
+    --navy-2: #1B3355;
+    --navy-deep: #0D1B30;
+    --slate: #4C5B72;
+    --parchment: #FBF8F1;
+    --parchment-2: #F6F0E2;
+    --gold: #BE9A45;
+    --gold-deep: #96762F;
+    --gold-wash: #F3EBD7;
+    --brick: #C4695A;
+    --line: #E7DFCC;
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Karla", "Segoe UI", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-padding-top: 92px; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--slate);
+    background: var(--parchment);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--gold); color: var(--navy); }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    color: var(--navy);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.012em;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+  .narrow { max-width: 820px; }
+
+  section { padding-block: clamp(3.6rem, 7vw, 5.6rem); }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.1rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 9px; height: 9px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex: none;
+  }
+  .eyebrow.on-dark { color: var(--gold); }
+
+  .section-head { max-width: 700px; margin-bottom: clamp(2rem, 4.5vw, 3rem); }
+  .section-head h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom: 1rem; }
+  .section-head .lead { font-size: 1.1rem; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(13, 27, 48, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(190, 154, 69, 0.22);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 68px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .brand svg { display: block; }
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--parchment);
+    letter-spacing: -0.01em;
+  }
+  .brand-name em {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    vertical-align: 0.35em;
+    margin-left: 0.3rem;
+  }
+  .packet-chip {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(230, 217, 168, 0.85);
+    border: 1px solid rgba(190, 154, 69, 0.4);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+  }
+  .nav .btn { text-decoration: none; }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 0.85rem 1.7rem;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:focus-visible, a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  .btn-gold { background: var(--gold); color: var(--navy-deep); }
+  .btn-gold:hover { background: #D2AC55; transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--parchment);
+    border: 1px solid rgba(190, 154, 69, 0.55);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-small { padding: 0.5rem 1.1rem; font-size: 0.9rem; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background:
+      radial-gradient(1000px 520px at 82% 0%, rgba(190, 154, 69, 0.14), transparent 58%),
+      linear-gradient(168deg, var(--navy-2) 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    color: var(--parchment);
+    padding-block: clamp(3.6rem, 7vw, 5.6rem);
+  }
+  .hero .narrow { max-width: 760px; }
+  .hero h1 {
+    color: var(--parchment);
+    font-size: clamp(2.3rem, 4.6vw, 3.7rem);
+    margin-bottom: 1.3rem;
+  }
+  .hero h1 .gold-it {
+    font-style: italic;
+    color: #D9B762;
+    font-weight: 600;
+  }
+  .hero .sub {
+    font-size: 1.13rem;
+    line-height: 1.7;
+    color: rgba(251, 248, 241, 0.85);
+    max-width: 36rem;
+    margin-bottom: 2rem;
+  }
+  .hero .sub strong { color: var(--parchment); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; margin-bottom: 1.5rem; }
+  .hero-chip {
+    font-size: 0.92rem;
+    color: rgba(230, 217, 168, 0.9);
+  }
+  .hero-chip .x { color: var(--gold); font-weight: 800; padding-inline: 0.35rem; }
+
+  /* ---------- Road timeline ---------- */
+  .road-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+  }
+  .road-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.5rem 1.4rem;
+  }
+  .road-stage {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .road-card h3 { font-size: 1.15rem; margin-bottom: 0.55rem; }
+  .road-card p { font-size: 0.93rem; }
+
+  /* ---------- Steps ---------- */
+  .step-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: 1.6rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.4rem 1.9rem;
+    box-shadow: 0 18px 44px -30px rgba(19, 37, 63, 0.22);
+  }
+  .step-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .step-body h3 { font-size: 1.35rem; margin-bottom: 0.4rem; }
+  .step-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    align-items: baseline;
+    margin-bottom: 0.9rem;
+  }
+  .meta-chip {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    background: var(--gold-wash);
+    border-radius: 999px;
+    padding: 0.28rem 0.8rem;
+  }
+  .meta-chip.you { color: #fff; background: var(--gold); }
+  .step-body p { margin-bottom: 0.9rem; max-width: 40rem; }
+  .step-body p strong { color: var(--navy); }
+  .step-link-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+  .step-link-note { font-size: 0.85rem; color: var(--slate); }
+  .tip {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-wash);
+    padding: 0.8rem 1.1rem;
+    font-size: 0.93rem;
+    border-radius: 0 6px 6px 0;
+    max-width: 40rem;
+  }
+  .tip strong { color: var(--gold-deep); }
+
+  /* ---------- Parallel / our part ---------- */
+  .parallel { background: var(--parchment-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .parallel-list { list-style: none; display: grid; gap: 1rem; max-width: 720px; }
+  .parallel-list li {
+    padding-left: 2.1rem;
+    position: relative;
+    font-size: 1.02rem;
+  }
+  .parallel-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42rem;
+    width: 10px; height: 10px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .parallel-list li strong { color: var(--navy); }
+
+  /* ---------- Ready box ---------- */
+  .ready-panel {
+    background: linear-gradient(180deg, #fff, var(--parchment-2));
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: clamp(1.8rem, 4vw, 2.8rem);
+    max-width: 860px;
+    margin-inline: auto;
+  }
+  .ready-panel h2 { text-align: center; font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 1.6rem; }
+  .ready-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+  }
+  .ready-item {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.1rem 1.2rem;
+  }
+  .ready-item .box {
+    flex: none;
+    width: 1.3rem; height: 1.3rem;
+    border: 2px solid var(--gold);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-deep);
+    font-weight: 800;
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+  }
+  .ready-item p { font-size: 0.95rem; }
+  .ready-item p strong { color: var(--navy); }
+  .ready-note {
+    text-align: center;
+    font-size: 0.93rem;
+    font-style: italic;
+    margin-top: 1.4rem;
+  }
+
+  /* ---------- Stuck ---------- */
+  .stuck {
+    background:
+      radial-gradient(800px 400px at 20% 0%, rgba(190, 154, 69, 0.12), transparent 55%),
+      linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--parchment);
+  }
+  .stuck .narrow { max-width: 700px; }
+  .stuck h2 { color: var(--parchment); font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 1rem; }
+  .stuck p { color: rgba(251, 248, 241, 0.82); margin-bottom: 1rem; }
+  .stuck a { color: var(--gold); font-weight: 700; }
+  .blessing {
+    margin-top: 2rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: rgba(230, 217, 168, 0.9);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-deep);
+    color: rgba(251, 248, 241, 0.55);
+    padding: 2.8rem 0 2.2rem;
+    border-top: 1px solid rgba(190, 154, 69, 0.18);
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .footer-brand .brand-name { font-size: 1.2rem; }
+  .footer-legal { max-width: 460px; font-size: 0.8rem; line-height: 1.7; }
+  .footer-copy { margin-top: 1.8rem; font-size: 0.8rem; }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .btn { transition: none; }
+  }
+
+  @media print {
+    .nav { position: static; background: var(--navy-deep); }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    section { padding-block: 1.6rem; }
+    .step-card { box-shadow: none; break-inside: avoid; }
+    .stuck, .hero { color: var(--navy); background: none; }
+    .stuck h2, .hero h1 { color: var(--navy); }
+    .stuck p, .hero .sub { color: var(--slate); }
+    .stuck a, .hero h1 .gold-it { color: var(--gold-deep); }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .road-grid { grid-template-columns: repeat(2, 1fr); }
+    .packet-chip { display: none; }
+  }
+  @media (max-width: 640px) {
+    .road-grid { grid-template-columns: 1fr; }
+    .step-card { grid-template-columns: 1fr; gap: 0.9rem; }
+    .ready-grid { grid-template-columns: 1fr; }
+    .nav .btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="https://bensblueprints.github.io/tenfold-ads-landing/" aria-label="Tenfold Ads">
+      <svg width="25" height="25" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 20V11a8 8 0 0 1 16 0v9Z" fill="none" stroke="#BE9A45" stroke-width="1.9"/>
+        <path d="M12 3v17M4 14.5h16" stroke="#BE9A45" stroke-width="1.2" opacity="0.75"/>
+      </svg>
+      <span class="brand-name">Tenfold<em>ADS</em></span>
+    </a>
+    <span class="packet-chip">Client welcome packet</span>
+    <a class="btn btn-ghost btn-small" data-mailto href="#">Questions? Email us</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container narrow">
+      <p class="eyebrow on-dark">For new Tenfold churches</p>
+      <h1>Welcome aboard. <span class="gold-it">You're in.</span></h1>
+      <p class="sub">
+        Your church has been accepted into Tenfold Ads. Over the next few weeks we'll get you approved for the
+        <strong>Google Ad Grant</strong> — up to <strong>$10,000 in advertising, every month</strong>.
+        Your part takes about <strong>20 minutes of clicking</strong>. Everything else is ours.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#steps">Start step one</a>
+        <a class="btn btn-ghost" href="#ready">What to have ready</a>
+      </div>
+      <p class="hero-chip">Three clicks<span class="x">·</span>one call<span class="x">·</span>then we take it from there</p>
+    </div>
+  </section>
+
+  <!-- ================= ROAD ================= -->
+  <section class="road">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">The road to your first $10,000</p>
+        <h2>Here's the whole journey</h2>
+        <p class="lead">Nothing below should surprise you. This is every stage, in order, with who does what.</p>
+      </div>
+      <div class="road-grid">
+        <div class="road-card reveal">
+          <span class="road-stage">This week</span>
+          <h3>Accounts &amp; applications</h3>
+          <p>You: the three steps below. Us: everything else, in parallel.</p>
+        </div>
+        <div class="road-card reveal">
+          <span class="road-stage">Next</span>
+          <h3>Verification</h3>
+          <p>Google's partner confirms your nonprofit status — usually days, occasionally a couple of weeks. We nudge them along.</p>
+        </div>
+        <div class="road-card reveal">
+          <span class="road-stage">Then</span>
+          <h3>Approval</h3>
+          <p>The grant switches on: your account can draw up to $10,000 a month. Your ads go live in your city.</p>
+        </div>
+        <div class="road-card reveal">
+          <span class="road-stage">Every month</span>
+          <h3>Report &amp; stewardship</h3>
+          <p>A one-page report in plain English. Weak ads retire, fresh ones take their place, the 5% line holds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STEPS ================= -->
+  <section class="steps" id="steps" style="background: var(--parchment-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="container narrow">
+      <div class="section-head reveal">
+        <p class="eyebrow">What we need from you</p>
+        <h2>Three clicks and one call</h2>
+        <p class="lead">Only your church can do these — the accounts must belong to you, in your name. Each one takes minutes, and none of them can break anything.</p>
+      </div>
+
+      <div class="step-card reveal">
+        <span class="step-num">01</span>
+        <div class="step-body">
+          <h3>Create your church's Google account</h3>
+          <div class="step-meta">
+            <span class="meta-chip you">You</span>
+            <span class="meta-chip">≈ 10 minutes</span>
+            <span class="step-link-note">one-time setup</span>
+          </div>
+          <p>
+            This account becomes the master key: the grant, the ads, and every click of data will belong to
+            <strong>your church, in your name</strong> — never to us. Use a dedicated account for the church,
+            not a personal one.
+          </p>
+          <p>
+            If your church has its own email domain (like <em>office@yourchurch.org</em>), Google can attach an
+            account to that address — choose <strong>"Use my current email address instead"</strong> during signup.
+            Otherwise, a new Gmail address like <em>yourchurchads@gmail.com</em> works just as well.
+          </p>
+          <div class="step-link-row">
+            <a class="btn btn-gold" href="https://accounts.google.com/signup" target="_blank" rel="noopener">Create your Google account</a>
+            <span class="step-link-note">opens Google in a new tab</span>
+          </div>
+          <div class="tip" style="margin-top:1.1rem;">
+            <strong>Tip:</strong> record the password somewhere safe, and make sure a second staff member can
+            recover it. This account outlives our work together — it's yours.
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card reveal">
+        <span class="step-num">02</span>
+        <div class="step-body">
+          <h3>Claim your Google for Nonprofits profile</h3>
+          <div class="step-meta">
+            <span class="meta-chip you">You</span>
+            <span class="meta-chip">≈ 5 minutes</span>
+            <span class="step-link-note">EIN required</span>
+          </div>
+          <p>
+            Sign in at the link below <strong>with the account you just created</strong>, then follow
+            <strong>"Get started"</strong> to verify your church's eligibility. You'll need your
+            <strong>EIN</strong>, and your church's <strong>legal name and address exactly as the IRS has them</strong> —
+            a mismatch there is the only thing that ever slows this down.
+          </p>
+          <p>
+            Google's verification partner confirms your nonprofit status, usually within a few days. This is the one
+            step no one can do for you — it's their way of making sure the account really belongs to your church.
+          </p>
+          <div class="step-link-row">
+            <a class="btn btn-gold" href="https://www.google.com/nonprofits/" target="_blank" rel="noopener">Google for Nonprofits</a>
+            <span class="step-link-note">sign in with your new church account</span>
+          </div>
+          <div class="tip" style="margin-top:1.1rem;">
+            <strong>Tip:</strong> Google sometimes asks for your <strong>501(c)(3) determination letter</strong>.
+            A photo or scan of it resolves the request the same day — having it ready now never hurts.
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card reveal">
+        <span class="step-num">03</span>
+        <div class="step-body">
+          <h3>Enroll in the Google Ad Grant</h3>
+          <div class="step-meta">
+            <span class="meta-chip you">You</span>
+            <span class="meta-chip">≈ 5 minutes</span>
+            <span class="step-link-note">after your profile is active</span>
+          </div>
+          <p>
+            Once your Google for Nonprofits status shows <strong>active</strong>, enroll in the Ad Grant —
+            from your dashboard's products list, or the link below. If Google walks you through creating a
+            <strong>Google Ads account</strong> along the way, say yes: that's the account your $10,000 lands in.
+          </p>
+          <p>
+            The moment your enrollment is approved, your account can spend up to <strong>$10,000 a month</strong> in
+            search advertising — the budget renews every month you stay qualified.
+          </p>
+          <div class="step-link-row">
+            <a class="btn btn-gold" href="https://www.google.com/grants/" target="_blank" rel="noopener">Google Ad Grants</a>
+            <span class="step-link-note">enroll once your profile is active</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card reveal">
+        <span class="step-num">04</span>
+        <div class="step-body">
+          <h3>Add us to the account — together, on a call</h3>
+          <div class="step-meta">
+            <span class="meta-chip" style="color:#fff;background:var(--navy);">You + us</span>
+            <span class="meta-chip">≈ 15 minutes</span>
+            <span class="step-link-note">we'll schedule it</span>
+          </div>
+          <p>
+            On our setup call, you'll invite us to manage the ads — a couple of clicks inside Google Ads.
+            <strong>The account stays yours;</strong> we just get keys to drive. From this moment on, the
+            applications, the keywords, the bidding, and the weekly watch over the 5% line are ours.
+          </p>
+          <div class="step-link-row">
+            <a class="btn btn-gold" data-mailto href="#">Book your setup call</a>
+            <span class="step-link-note">or just reply to your welcome email</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARALLEL ================= -->
+  <section class="parallel">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Meanwhile, on our side of the fence</p>
+        <h2>While you click, we're already at work</h2>
+      </div>
+      <ul class="parallel-list reveal">
+        <li><strong>Preparing your campaigns</strong> — the searches your city makes, and the words that win the click.</li>
+        <li><strong>Drafting your ad copy</strong> — you'll approve it in about ten minutes, before anything goes live.</li>
+        <li><strong>Watching for Google's verification emails</strong> — and nudging them along so nothing sits idle.</li>
+        <li><strong>Setting up your tracking</strong> — so the monthly report shows real people finding your church, not vanity numbers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= READY ================= -->
+  <section class="ready" id="ready">
+    <div class="container">
+      <div class="ready-panel reveal">
+        <h2>Have these within reach</h2>
+        <div class="ready-grid">
+          <div class="ready-item">
+            <div class="box" aria-hidden="true">✓</div>
+            <p><strong>Your church's EIN</strong> — the tax ID number. It's on any giving statement or IRS letter.</p>
+          </div>
+          <div class="ready-item">
+            <div class="box" aria-hidden="true">✓</div>
+            <p><strong>Legal name &amp; mailing address</strong> — exactly as the IRS has them. This is where mismatches happen.</p>
+          </div>
+          <div class="ready-item">
+            <div class="box" aria-hidden="true">✓</div>
+            <p><strong>Your church website login</strong> — for the setup call, so we can point the ads at the right doors.</p>
+          </div>
+          <div class="ready-item">
+            <div class="box" aria-hidden="true">✓</div>
+            <p><strong>Your 501(c)(3) determination letter</strong> — only if Google asks. A phone photo is fine.</p>
+          </div>
+        </div>
+        <p class="ready-note">Twenty minutes, all told. The other few weeks of work are ours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STUCK ================= -->
+  <section class="stuck">
+    <div class="container narrow">
+      <p class="eyebrow on-dark reveal">If anything snags</p>
+      <h2 class="reveal">No wrong doors in this process</h2>
+      <p class="reveal">
+        A screen that doesn't look like the one we described, a question Google asks that we didn't cover, a letter
+        they request — write to us at
+        <a data-mailto href="#"><span data-email>you@tenfoldads.com</span></a>
+        and a real person answers within one business day.
+      </p>
+      <p class="reveal">
+        We know these screens well, and nothing you click in the steps above can break anything. Take your time —
+        the grant isn't going anywhere.
+      </p>
+      <p class="blessing reveal">Now the work of multiplication begins.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">Tenfold<em style="font-family:var(--font-body);font-style:normal;font-weight:700;font-size:0.6rem;letter-spacing:0.22em;color:var(--gold);vertical-align:0.35em;margin-left:0.3rem;">ADS</em></span>
+      </div>
+      <p class="footer-legal">
+        Tenfold Ads is an independent service and is not affiliated with or endorsed by Google. Google for Nonprofits,
+        Google Ad Grants, their eligibility requirements, and the monthly $10,000 allowance are programs of Google,
+        which sets and may change their terms at any time.
+      </p>
+    </div>
+    <p class="footer-copy">© <span id="year">2026</span> Tenfold Ads. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ← CHANGE THIS ONE LINE to your real email. Clients write you here.
+  const CONTACT_EMAIL = "you@tenfoldads.com";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll("[data-email]").forEach(el => el.textContent = CONTACT_EMAIL);
+  document.querySelectorAll("[data-mailto]").forEach(el => el.href = "mailto:" + CONTACT_EMAIL);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
